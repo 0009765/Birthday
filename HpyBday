@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday!</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+    }
+    .container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+    h1 {
+        color: #333;
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+    p {
+        color: #666;
+        font-size: 18px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+    .photo {
+        max-width: 100%;
+        border-radius: 50%;
+        margin-bottom: 20px;
+    }
+    .button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: #fff;
+        font-size: 18px;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        margin: 5px;
+        cursor: pointer;
+        border: none;
+        outline: none;
+    }
+    .button:hover {
+        background-color: #45a049;
+    }
+    .disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <img src="https://source.unsplash.com/300x300/?panda" alt="Crush's Photo" class="photo">
+    <h1>Happy Birthday,Looseuuuuuuuuu!</h1>
+    <p>On your special day, I have some surprises for you!</p>
+    <button class="button" onclick="showSurprise('Bouquet')">Clickkkkk Maadu Bega</button>
+    <button class="button" onclick="showSurprise('GIF')">Clickkkkk !!!!</button>
+    <button class="button" onclick="showSurprise('Video')">Clickkkkk Maadu but yenu work agalla</button>
+    <button class="button" onclick="showSurprise('Poem')">????</button>
+    <div id="surprise"></div>
+    <button id="sendButton" class="button disabled" onclick="sendWishes()" disabled>Send Birthday Wishes</button>
+</div>
+
+<script>
+    var clickedButtons = [];
+
+    function showSurprise(type) {
+        var surpriseElement = document.getElementById('surprise');
+        surpriseElement.innerHTML = '';
+
+        switch(type) {
+            case 'Bouquet':
+                surpriseElement.innerHTML = '<p>Surprise: Looseuuuuu1!</p><img src="https://source.unsplash.com/300x300/?flower" alt="Clickkkkk">';
+                break;
+            case 'GIF':
+                surpriseElement.innerHTML = '<p>Surprise: Looseuuuuu2!</p><img src="https://media.giphy.com/media/3o7TKG0eIyxQbJLtTi/giphy.gif" alt="Clickkkkk Maadu Bega>';
+                break;
+            case 'Video':
+                surpriseElement.innerHTML = '<p>Surprise: Looseuuuuu3!</p><iframe width="300" height="200" src="https://www.youtube.com/embed/UJr6c9uk8r8" frameborder="0" allowfullscreen></iframe>';
+                break;
+            case 'Poem':
+                surpriseElement.innerHTML = '<p>Surprise: A heartfelt poem written just for you!</p><p> Saak Hog Malko Looseuu!</p>';
+                break;
+        }
+
+        if (!clickedButtons.includes(type)) {
+            clickedButtons.push(type);
+        }
+
+        if (clickedButtons.length === 4) {
+            document.getElementById('sendButton').classList.remove('disabled');
+            document.getElementById('sendButton').disabled = false;
+        }
+    }
+
+    function sendWishes() {
+        alert('Hpyyy Birthday Pooooooooooja RV! 🎉🎂');
+    }
+</script>
+
+</body>
+</html>
